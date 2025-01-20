@@ -1,0 +1,22 @@
+url: https://securitytrails.com
+
+config:
+  interaction_pause: 3
+  wait_until: networkidle
+
+actions:
+
+  # This bypasses Cloudflare Turnstile
+  - element: checkbox to the left of "Verify you are human"
+    do:
+      - click:
+
+  - element: main search bar
+    do:
+      - click:
+      - type: example.com
+
+  - element: search button
+    do:
+      - click:
+      - screenshot:

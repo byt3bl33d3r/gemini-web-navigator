@@ -1,0 +1,14 @@
+[project]
+name = "gemini-cloudflare-bypass"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-generativeai>=0.8.3",
+    "patchright>=1.49.1",
+    "pillow>=11.1.0",
+    "pydantic>=2.10.5",
+    "pydantic-settings>=2.7.1",
+    "pyyaml>=6.0.2",
+]

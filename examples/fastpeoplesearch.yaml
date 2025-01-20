@@ -1,0 +1,21 @@
+url: https://fastpeoplesearch.com
+
+config:
+  interaction_pause: 3
+  wait_until: networkidle
+
+actions:
+
+  # This bypasses Cloudflare Turnstile
+  - element: checkbox to the left of "Verify you are human"
+    do:
+      - click:
+
+  - element: search bar with "e.g John Doe"
+    do:
+      - click:
+      - type: Elon Musk
+
+  - element: button with "Free Search"
+    do:
+      - click:
