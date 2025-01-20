@@ -1,0 +1,17 @@
+url: https://google.com
+
+config:
+  interaction_pause: 3
+  wait_until: networkidle
+
+actions:
+
+  # You can select elements with natural language, keep it short and precise.
+  - element: main search bar 
+    do:
+      - click:
+      - type: Elon Musk
+
+  - element: first result
+    do:
+      - click:

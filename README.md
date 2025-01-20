@@ -8,7 +8,7 @@ One of the most unique features of [Google Gemini](https://gemini.google.com/?hl
 
 This got me thinking: how does it perform when asked to return bounding box coordinates for web page elements? Turns out it works suprisingly well on simple/medium complexity web pages.
 
-As this is a *PURELY* vision based LLM browser control system, you have the ability to select web page elements to interact with through screenshots using natural language but it also gives you a lot of the same cabilities of other projects like [browser-use]() or [skyvern](https://github.com/Skyvern-AI/skyvern) "on the cheap": no injecting custom JS into the browser context to highlight interactive elements on the webpage or complicated Agentic systems.
+As this is a *PURELY* vision based LLM browser control system, you have the ability to select web page elements to interact with through screenshots using natural language but it also gives you a lot of the same cabilities of other projects like [browser-use](https://github.com/browser-use/browser-use) or [skyvern](https://github.com/Skyvern-AI/skyvern) "on the cheap": no injecting custom JS into the browser context to highlight interactive elements on the webpage or complicated Agentic systems.
 
 Just to be clear I'm not saying this is better than the other projects I mentioned above, I'm just saying it's cheaper: this is ~200 lines of Python, no agentic system necessary and works suprisingly well on simple/medium complexity webpages. Choose the best tool for your use case.
 
@@ -27,7 +27,7 @@ Below is a video demonstration of this approach: the LLM bypasses Cloudflare Tur
 
 [![Demo Video](https://img.youtube.com/vi/JO8jMHpOW90/0.jpg)](https://www.youtube.com/watch?v=JO8jMHpOW90)
 
-The "secret sauce" (if you can call it that) to bypass Turnstile are the following lines in the workflow YAML file we're passing on the command line ([full workflow file here]()):
+The "secret sauce" (if you can call it that) to bypass Turnstile are the following lines in the workflow YAML file we're passing on the command line ([full workflow file here](https://github.com/byt3bl33d3r/gemini-web-navigator/blob/29ec97781fd7e66f813ec6dabcd1a705439833c2/examples/securitytrails.yaml)):
 
 ```yaml
 actions:
@@ -57,7 +57,7 @@ It's obviously possible to make a standalone `Dockefile` for this it's just a lo
 
 ## Usage
 
-You just need to give the path to a workflow YAML file to `gemini_navigator.py`. Workflow files are pretty self explanitory. Below is an example:
+You just need to give the path to a workflow YAML file to `gemini_navigator.py`. Workflow files are pretty self explanitory. Below is an example, check out the `examples` folder in this repo for more:
 
 ```yaml
 url: https://securitytrails.com # Starting URL
