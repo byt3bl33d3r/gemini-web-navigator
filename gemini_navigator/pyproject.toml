@@ -6,9 +6,14 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "google-generativeai>=0.8.3",
+    "httpx>=0.28.1",
+    "markitdown>=0.0.1a3",
     "patchright>=1.49.1",
     "pillow>=11.1.0",
     "pydantic>=2.10.5",
     "pydantic-settings>=2.7.1",
     "pyyaml>=6.0.2",
 ]
+
+[tool.uv.workspace]
+members = ["omniparser", "ocr"]

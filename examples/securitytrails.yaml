@@ -19,4 +19,4 @@ actions:
   - element: search button
     do:
       - click:
-      - screenshot:
+      - markdownify:

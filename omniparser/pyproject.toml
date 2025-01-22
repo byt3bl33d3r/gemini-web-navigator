@@ -1,0 +1,20 @@
+[project]
+name = "omniparser"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dill>=0.3.9",
+    "einops>=0.8.0",
+    "fastapi>=0.115.6",
+    "httpx>=0.28.1",
+    "pillow>=11.1.0",
+    "python-multipart>=0.0.20",
+    "supervision>=0.25.1",
+    "timm>=1.0.14",
+    "torch>=2.5.1",
+    "transformers>=4.48.1",
+    "ultralytics>=8.3.23",
+    "uvicorn>=0.34.0",
+]

@@ -14,6 +14,7 @@ import tkinter as tk
 from yaml import Loader
 from uuid import uuid4
 from pathlib import Path
+from markitdown import MarkItDown
 from collections import namedtuple
 from pydantic import SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -146,11 +147,16 @@ class GeminiVision:
 
         return ymin, xmin, ymax, xmax
 
-if __name__ == '__main__':
+def convert_to_markdown(html: str):
+    md = MarkItDown()
+    with io.StringIO(html) as s:
+        return md.convert_stream(s, file_extensions='.html').text_content
+
+def manual_mode():
     parser = argparse.ArgumentParser()
     parser.add_argument('workflow_yaml_file', type=Path, metavar="workflow_yaml_file")
     args = parser.parse_args()
-    
+
     if not args.workflow_yaml_file.exists():
         print('path to workflow yaml file does not exist!')
         sys.exit(1)
@@ -203,8 +209,16 @@ if __name__ == '__main__':
 
                             if name == 'screenshot':
                                 await page.screenshot(path='final_screenshot.png')
-                            
+
                             if name == 'markdownify':
-                                raise NotImplementedError
+                                with open('final_page.md', 'w') as f:
+                                    f.write(
+                                        await asyncio.to_thread(
+                                            convert_to_markdown,
+                                            await page.content()
+                                    ))
 
     asyncio.run(main())
+
+if __name__ == '__main__':
+    manual_mode()

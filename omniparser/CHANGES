@@ -1,0 +1,3 @@
+- Seperated out OCR capabilities cause of dependency issues with supervision and numpy/paddleocr
+- Removed Gradio UI
+- Made FastAPI service
